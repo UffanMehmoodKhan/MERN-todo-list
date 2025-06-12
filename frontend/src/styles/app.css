@@ -1,0 +1,165 @@
+:root{
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    margin: 100px;
+    padding: 1em;
+}
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+    width: 50%;
+    height: 50vh;
+
+    font-weight: 500;
+    color: #646cff;
+    background-color: #1c1f1f;
+
+    margin: 200px auto auto auto;
+
+    border: #535bf2;
+}
+
+.login-container .form-group{
+
+    padding: 20px  0  0 10px;
+    margin: 10px 0 10px 10px;
+
+}
+
+.signup-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+    width: 50%;
+    height: 50vh;
+
+    font-weight: 500;
+    color: #646cff;
+    background-color: #1c1f1f;
+
+    margin: 200px auto auto auto;
+
+    border: #535bf2;
+}
+
+.signup-container .form-group{
+
+    padding: 20px  0  0 10px;
+    margin: 10px 0 10px 10px;
+
+}
+
+.dashboard-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+    width: 50%;
+    height: 50vh;
+
+    font-weight: 1500;
+    color: #646cff;
+    background-color: #1c1f1f;
+    margin: 200px auto auto auto;
+    border: #535bf2;
+}
+
+.dashboard-container .todo-list{
+
+    align-self: baseline;
+    font-weight: 800;
+    color: #646cff;
+    background-color: #1c1f1f;
+
+    margin: 80px auto auto auto;
+    border: #535bf2;
+}
+
+.todo-list-container {
+    margin: 30px 0 0 0;
+    padding: 20px;
+    background: #23272f;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px #00000033;
+}
+
+.add-item-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-item-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #535bf2;
+    background: #181a20;
+    color: #fff;
+}
+
+.add-item-btn, .save-btn, .remove-btn {
+    background: #535bf2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.add-item-btn:hover, .save-btn:hover, .remove-btn:hover {
+    background: #646cff;
+}
+
+.todo-list-ui {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.todo-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #181a20;
+    margin-bottom: 10px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 1.1em;
+}
+
+.remove-btn {
+    background: #ff4d4f;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.remove-btn:hover {
+    background: #ff7875;
+}
+
+.signout-btn {
+    background: #ff4d4f;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+.signout-btn:hover {
+    background: #ff7875;
+}
