@@ -6,7 +6,7 @@ const router = express.Router();
 
 
 // LOGIN ROUTE
-router.post("/login", async (req, res) => {
+router.post("/login", async (req, res, authMiddleware) => {
     await ToDoController.login(req, res);
 });
 
@@ -15,13 +15,22 @@ router.post("/register", async (req, res) => {
     await ToDoController.register(req, res);
 });
 
-// DASHBOARD ROUTE
-router.post("/todo", async (req, res) => {
-    await ToDoController.todo(req, res);
+router.delete('/logout', (req, res) => {
+    res.clearCookie('token', {
+        httpOnly: true,
+        sameSite: 'strict',
+        secure: false // Set to true if using HTTPS
+    });
+    res.status(200).json({ success: true, message: 'Logged out successfully' });
 });
 
-router.post("/todo/update", async (req, res) => {
-    await ToDoController.update(req, res);
-});
+// // DASHBOARD ROUTE
+// router.post("/todo", async (req, res) => {
+//     await ToDoController.todo(req, res);
+// });
+//
+// router.post("/todo/update", async (req, res) => {
+//     await ToDoController.update(req, res);
+// });
 
 module.exports = router;

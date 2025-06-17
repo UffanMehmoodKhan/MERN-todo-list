@@ -1,13 +1,22 @@
 const express = require('express');
 const app = express();
+const dotenv = require('dotenv');
 
 const path = require('path');
 const cors = require('cors');
 const { run } = require('./src/models/mongo');
 const userRouter = require('./src/routes/user.js');
+const todoRouter = require('./src/routes/todo');
+const updateRouter = require('./src/routes/update');
+const {authMiddleware} = require("./src/middlewares/authMiddleware");
+const cookieParser = require('cookie-parser');
+
+// Load environment variables from .env file
+dotenv.config();
 
 // Middleware to parse JSON bodies
 app.use(express.json());
+app.use(cookieParser());
 app.use(
     cors({
         origin: 'http://localhost:5173',
@@ -20,6 +29,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.use('/', userRouter);
+app.use('/todo', authMiddleware, todoRouter);
+app.use('/todo/update', authMiddleware, updateRouter);
+
 
 
 // Route to handle the root path
