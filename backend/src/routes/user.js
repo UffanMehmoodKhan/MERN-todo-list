@@ -10,7 +10,7 @@ router.post("/login", async (req, res, authMiddleware) => {
     await ToDoController.login(req, res);
 });
 
-// SIGNUP ROUTE
+
 router.post("/register", async (req, res) => {
     await ToDoController.register(req, res);
 });
