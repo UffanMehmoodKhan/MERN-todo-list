@@ -66,8 +66,14 @@ export default function Dashboard() {
         setSaving(false);
     };
 
-    const handleSignOut = () => {
-        localStorage.clear();
+    const handleSignOut = async () => {
+
+        try {
+            await axiosInstance.delete('http://localhost:3000/logout', { withCredentials: true });
+            localStorage.clear();
+        } catch (error) {
+            console.error('Logout failed:', error);
+        }
         navigate("/");
     };
 

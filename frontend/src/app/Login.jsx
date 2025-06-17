@@ -15,6 +15,7 @@ export default function Login() {
             const response = await axiosInstance.post('http://localhost:3000/login', { username, password });
 
             if (response.data.success) {
+                console.log('Login successful:', response);
                 localStorage.setItem('username', username);
                 navigate('/todo');
             } else {
