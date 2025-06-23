@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axiosInstance from "../api/axiosConfig.js";
+import { Link } from "react-router-dom";
 import "../styles/app.css";
 
 export default function Dashboard() {
@@ -87,6 +88,7 @@ export default function Dashboard() {
                 <h2>Dashboard</h2>
                 <p>Welcome, {username}!</p>
                 {error && <p className="error-message">{error}</p>}
+                <Link to="/chat" className="nav-link">Chat Room</Link>
                 <div className="todo-list-container">
                     <div className="add-item-row">
                         <input
@@ -110,6 +112,8 @@ export default function Dashboard() {
                         {saving ? "Saving..." : "Save"}
                     </button>
                 </div>
+
+
             </div>
         </>
     );

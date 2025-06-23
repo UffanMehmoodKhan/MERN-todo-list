@@ -3,6 +3,7 @@ import App from "../App.jsx";
 import Login from "../app/Login.jsx";
 import SignUp from "../app/SignUp.jsx";
 import Dashboard from "../app/Dashboard.jsx";
+import ChatRoom from "../app/ChatRoom.jsx";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     {
         path: "/todo",
         element: <Dashboard />
+    },
+    {
+        path: "/chat",
+        element: <ChatRoom />
     },
 
     {
