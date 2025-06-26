@@ -1,17 +1,24 @@
+:root{
+    --primary-color: #646cff;
+    --secondary-color: #535bf2;
+    --background-color: #1c1f1f;
 
+    font-weight: 1500;
+    color: #646cff;
+    background-color: white;
+    border: #535bf2;
+}
 
 .dashboard-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: space-around;
-    width: 50%;
-    height: 50vh;
+    width: 100%;
 
     font-weight: 1500;
     color: #646cff;
     background-color: #1c1f1f;
-    margin: 80px auto auto auto;
     border: #535bf2;
 }
 
@@ -111,16 +118,17 @@
     flex-direction: column;
     justify-content: left;
     align-content: first baseline;
-    width: 825px;
+    width: 80px;
     height: 60vh;
 
     font-weight: 500;
     color: #646cff;
-    background-color: #1c1f1f;
-
-    margin: 80px auto auto auto;
-
+    background-color: white;
     border: #535bf2;
+    /*margin: 80px auto auto auto;*/
+    /*padding: 60px 70px 70px 70px;*/
+
+
 }
 
 .chat-history {
@@ -132,7 +140,8 @@
     color: #646cff;
     background-color: #1c1f1f;
 
-    margin: 80px auto auto auto;
+    /*margin: 80px auto auto auto;*/
+    /*padding: 60px 70px 70px 70px;*/
 
     border: #535bf2;
 

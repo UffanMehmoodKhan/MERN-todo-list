@@ -1,8 +1,7 @@
-:root{
+#body{
     --nav-bar-height: 80px;
-    --nav-bar-background-color: #333;
+    --nav-bar-background-color: white;
     --nav-bar-text-color: #fff;
-    background-color: #1a1a1a;
 }
 
 .nav-bar{
@@ -13,5 +12,13 @@
     align-content: center;
     padding: 20px 0px 20px 0px;
     margin: 0 0 0 0;
-    background-color: black;
+    background-color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #fde0e0;
+}
+
+a{
+    color: var(--nav-bar-text-color);
+    text-decoration: none;
+    font-weight: 600;
 }

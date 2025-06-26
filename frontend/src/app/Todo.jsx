@@ -67,23 +67,9 @@ export default function ToDo() {
         setSaving(false);
     };
 
-    const handleSignOut = async () => {
-
-        try {
-            await axiosInstance.delete('http://localhost:3000/logout', {withCredentials: true});
-            localStorage.clear();
-        } catch (error) {
-            console.error('Logout failed:', error);
-        }
-        navigate("/");
-    };
-
     return (<>
         <div className="dashboard-container">
-            <h2>Dashboard</h2>
-            <p>Welcome, {username}!</p>
             {error && <p className="error-message">{error}</p>}
-            <Link to="/chat" className="nav-link">Chat Room</Link>
             <div className="todo-list-container">
                 <div className="add-item-row">
                     <input

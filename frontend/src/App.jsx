@@ -5,9 +5,7 @@ function App() {
 
     return (<>
         <NavBar/>
-        <div className="container-fluid">
-            <Outlet />
-        </div>
+        <Outlet/>
     </>)
 }
 

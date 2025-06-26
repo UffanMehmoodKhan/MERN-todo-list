@@ -18,7 +18,7 @@ export default function Login() {
             if (response.data.success) {
                 console.log('Login successful:', response);
                 localStorage.setItem('username', username);
-                navigate('/todo');
+                navigate('/');
             } else {
                 console.error('Login failed:', response.data.message);
             }
@@ -31,9 +31,9 @@ export default function Login() {
 
         <div className={"login-container"}>
             <div className={"login-logo"}>
-                <img src={logo} alt="logo" />
+                <img src={logo} alt="logo"/>
             </div>
-            <div className={"login-form"} >
+            <div className={"login-form"}>
                 <h2>Login</h2>
                 <form onSubmit={handleLogin}>
                     <div className="form-group">
@@ -63,7 +63,6 @@ export default function Login() {
                 <br/>
                 <p>Don't have an account? <Link to="/register">Sign Up</Link></p>
             </div>
-        </div>
-);
+        </div>);
 
 }

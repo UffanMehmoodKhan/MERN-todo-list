@@ -1,6 +1,7 @@
-import logo from "../../assets/img_1.png";
+import logo from "../../assets/img.png";
 import "../../styles/components/navbar.css"
 import {Link, useNavigate} from "react-router-dom";
+import axiosInstance from "../../api/axiosConfig.js";
 
 export default function NavBar() {
 
@@ -21,7 +22,7 @@ export default function NavBar() {
         <div className={"nav-bar"}>
             <Link to={"/"}><img
                 src={logo}
-                width={50}
+                width={150}
                 height={"auto"}
                 alt={"logo"}
             /></Link>

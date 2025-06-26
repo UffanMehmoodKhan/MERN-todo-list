@@ -128,10 +128,24 @@ export default function ChatRoom() {
         return Array.isArray(chat.users) ? chat.users.find((n) => n !== username) || "Unknown" : "Unknown";
     }
 
-    return (<div>
-        <h1>Chat Room: {username}</h1>
+    return (
         <div style={{display: "flex", flexDirection: "row"}}>
-            <div className="chat-history" style={{minWidth: 200, padding: 10}}>
+            <div className="chat-history" style={{display: "flex", flexDirection: "column", backgroundColor: "#1c1f1f", minWidth: 220, padding: 15, background: "grey", borderRadius: 8, margin: 20}}>
+                <button style={{
+                        backgroundColor: "green", cursor: "pointer", border: "none", marginTop: "1px",
+                    padding: 10, borderRadius: "300px", display: "flex", alignItems: "center", alignContent: "center",
+                    }} onClick={createNewChat}
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white"
+                         className="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                        <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                        <path fill-rule="evenodd"
+                              d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"/>
+                    </svg>
+                    <div style={{marginLeft: 20, marginBottom: 30}}></div>
+                    <h5 style={{color:"#f0f0f0"}}>New Chat</h5>
+                </button>
+                <br/>
                 {chats.map((chat) => (<button
                     key={chat.channel}
                     onClick={() => {
@@ -151,27 +165,16 @@ export default function ChatRoom() {
                 >
                     {getOtherUser(chat)} ({chat.channel})
                 </button>))}
-                <button
-                    style={{
-                        backgroundColor: "transparent", cursor: "pointer", border: "none", marginTop: "10px",
-                    }}
-                    onClick={createNewChat}
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor"
-                         className="bi bi-plus-square-fill" viewBox="0 0 16 16">
-                        <path
-                            d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
-                    </svg>
-                </button>
+
             </div>
-            <div className="chat-portal" style={{flex: 1, position: "relative", padding: 10}}>
+            <div className="chat-portal" style={{flex: 1, position: "relative", padding: 60}}>
                 {/* Create Chat Form */}
                 <div
                     ref={chatForm}
                     style={{
                         display: "none",
                         position: "absolute",
-                        background: "#fff",
+                        backgroundColor: "#fff",
                         padding: 20,
                         border: "1px solid #ccc",
                         zIndex: 10,
@@ -259,6 +262,5 @@ export default function ChatRoom() {
                     </form>
                 </div>
             </div>
-        </div>
-    </div>);
+        </div>);
 }
