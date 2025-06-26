@@ -1,65 +1,6 @@
-:root{
-    background-color: #1a1a1a;
-    color: white;
-}
 
-.nav-bar{
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-    margin: 100px;
-    padding: 1em;
-}
 
-.login-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: space-around;
-    width: 50%;
-    height: 50vh;
-
-    font-weight: 500;
-    color: #646cff;
-    background-color: #1c1f1f;
-
-    margin: 200px auto auto auto;
-
-    border: #535bf2;
-}
-
-.login-container .form-group{
-
-    padding: 20px  0  0 10px;
-    margin: 10px 0 10px 10px;
-
-}
-
-.signup-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: space-around;
-    width: 50%;
-    height: 50vh;
-
-    font-weight: 500;
-    color: #646cff;
-    background-color: #1c1f1f;
-
-    margin: 200px auto auto auto;
-
-    border: #535bf2;
-}
-
-.signup-container .form-group{
-
-    padding: 20px  0  0 10px;
-    margin: 10px 0 10px 10px;
-
-}
-
-.dashboard-container{
+.dashboard-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -74,7 +15,7 @@
     border: #535bf2;
 }
 
-.dashboard-container .todo-list{
+.dashboard-container .todo-list {
 
     align-self: baseline;
     font-weight: 800;
@@ -160,11 +101,12 @@
     font-weight: 600;
     transition: background 0.2s;
 }
+
 .signout-btn:hover {
     background: #ff7875;
 }
 
-.chat-portal{
+.chat-portal {
     display: flex;
     flex-direction: column;
     justify-content: left;
@@ -180,7 +122,8 @@
 
     border: #535bf2;
 }
-.chat-history{
+
+.chat-history {
 
     width: 250px;
     height: 60vh;

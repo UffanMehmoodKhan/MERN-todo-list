@@ -1,0 +1,46 @@
+.signup-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.signup-logo, .signup-form {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-logo {
+    /*background: #222; !* or any color/image you like *!*/
+}
+
+.signup-logo img {
+    max-width: 70%;
+    max-height: 70%;
+    object-fit: contain;
+}
+
+.signup-form {
+    background: #1c1f1f;
+    flex-direction: column;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.signup-form input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background: #222;
+    color: #fff;
+}

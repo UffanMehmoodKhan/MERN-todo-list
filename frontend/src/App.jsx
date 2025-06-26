@@ -1,21 +1,14 @@
-import './App.css'
-import {Link} from "react-router-dom";
-import "../src/styles/app.css"
+import {Link, Outlet} from "react-router-dom";
+import NavBar from "./app/components/NavBar";
 
 function App() {
 
-  return (
-    <>
-        <div className={"nav-bar"}>
-
-            <Link to={"/login"}>Login</Link>
-            <Link to={"/register"}>SignUp</Link>
-
+    return (<>
+        <NavBar/>
+        <div className="container-fluid">
+            <Outlet />
         </div>
-        <h1>To-Do List</h1>
-
-    </>
-  )
+    </>)
 }
 
 export default App
