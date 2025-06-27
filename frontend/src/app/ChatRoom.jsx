@@ -1,6 +1,7 @@
 import {useEffect, useRef, useState} from "react";
 import axiosInstance from "../api/axiosConfig.js";
 import {io} from "socket.io-client";
+import "../styles/chat.css";
 
 export default function ChatRoom() {
     const [chats, setChats] = useState([]);
@@ -129,22 +130,25 @@ export default function ChatRoom() {
     }
 
     return (
-        <div style={{display: "flex", flexDirection: "row"}}>
-            <div className="chat-history" style={{display: "flex", flexDirection: "column", backgroundColor: "#1c1f1f", minWidth: 220, padding: 15, background: "grey", borderRadius: 8, margin: 20}}>
-                <button style={{
+        <div style={{display: "flex", flexDirection: "row"}} className={"mt-4"}>
+            <div className="chat-history" style={{display: "flex", flexDirection: "column", justifyContent: "flex-start",backgroundColor: "#d1e7dd",
+                minWidth: 220, padding: 15, borderRadius: 8, margin: 50}}>
+                <div style={{display: "flex", justifyContent: "space-around", alignItems: "center", width: "100%"}}>
+                    <button style={{
                         backgroundColor: "green", cursor: "pointer", border: "none", marginTop: "1px",
-                    padding: 10, borderRadius: "300px", display: "flex", alignItems: "center", alignContent: "center",
-                    }} onClick={createNewChat}
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white"
-                         className="bi bi-person-plus-fill" viewBox="0 0 16 16">
-                        <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                        <path fill-rule="evenodd"
-                              d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"/>
-                    </svg>
-                    <div style={{marginLeft: 20, marginBottom: 30}}></div>
-                    <h5 style={{color:"#f0f0f0"}}>New Chat</h5>
-                </button>
+                        padding: 10, borderRadius: "300px", display: "flex",
+                    }} onClick={createNewChat}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white"
+                             className="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                            <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                            <path fill-rule="evenodd"
+                                  d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"/>
+                        </svg>
+                        <div style={{marginLeft: 20, marginBottom: 30}}></div>
+                        <h5 style={{color:"#f0f0f0"}}>New Chat</h5>
+                    </button>
+                </div>
+
                 <br/>
                 {chats.map((chat) => (<button
                     key={chat.channel}
@@ -154,7 +158,7 @@ export default function ChatRoom() {
                     }}
                     style={{
                         margin: "5px",
-                        background: chat.channel === activeChannel ? "#d1e7dd" : "#f0f0f0",
+                        background: chat.channel === activeChannel ? "#a1a1a1" : "#f0f0f0",
                         border: "none",
                         padding: "8px 12px",
                         borderRadius: "8px",

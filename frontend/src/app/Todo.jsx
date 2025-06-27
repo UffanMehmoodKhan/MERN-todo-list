@@ -1,8 +1,8 @@
 import {useEffect, useState, useMemo} from "react";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, Link} from "react-router-dom";
 import axiosInstance from "../api/axiosConfig.js";
-import {Link} from "react-router-dom";
-import "../styles/app.css";
+import "../styles/todo.css";
+import "../styles/app.css"
 
 export default function ToDo() {
     const navigate = useNavigate();
@@ -68,18 +68,30 @@ export default function ToDo() {
     };
 
     return (<>
-        <div className="dashboard-container">
+
+        <div className="todo-container">
+            <h1>TodoList</h1>
             {error && <p className="error-message">{error}</p>}
             <div className="todo-list-container">
+                <div className={"mb-4"} style={{display: "flex", justifyContent: "center", width: "100%", alignSelf: "center", color: "black", fontFamily: "Roboto, sans-serif"}}>
+                    <h2>Welcome, {username}!</h2>
+                </div>
                 <div className="add-item-row">
                     <input
+                        id={"add-item-input"}
                         type="text"
                         value={newItem}
                         onChange={e => setNewItem(e.target.value)}
                         placeholder="Add a new task..."
                         className="add-item-input"
                     />
-                    <button className="add-item-btn" onClick={handleAdd}>Add</button>
+                    <button className="add-item-btn" onClick={handleAdd}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                             className="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                            <path
+                                d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+                        </svg>
+                    </button>
                 </div>
                 <ul className="todo-list-ui">
                     {items.map((item, idx) => (<li key={idx} className="todo-list-item">
@@ -87,9 +99,11 @@ export default function ToDo() {
                         <button className="remove-btn" onClick={() => handleRemove(idx)}>Remove</button>
                     </li>))}
                 </ul>
-                <button className="save-btn" onClick={handleSave} disabled={saving}>
+                <div style={{display: "flex", justifyContent: "flex-end", width: "100%", alignSelf: "center"}}>
+                    <button className="save-btn" onClick={handleSave} disabled={saving}>
                     {saving ? "Saving..." : "Save"}
-                </button>
+                </button></div>
+
             </div>
 
 

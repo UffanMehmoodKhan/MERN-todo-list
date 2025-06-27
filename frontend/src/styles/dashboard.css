@@ -1,0 +1,117 @@
+/* Dashboard Styles */
+.dashboard-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    padding: 120px 150px 100px 30px;
+    margin: 0;
+    font-weight: 1500;
+    color: black;
+    border-bottom: none;
+    position: relative; /* Add this */
+}
+
+.dashboard-container::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80%; /* Adjust for desired length */
+    height: 1px; /* Thickness of the line */
+    background: black; /* Or any color you want */
+    border-radius: 1px;
+}
+
+.dashboard-container .dashboard-aside {
+    align-self: baseline;
+    font-weight: 800;
+    width: 40%;
+
+    padding: 60px 80px 70px 70px;
+    margin-right: 50px;
+    border: #535bf2;
+}
+
+.dashboard-container .dashboard-logo{
+    align-self: center;
+    border: #535bf2;
+}
+
+/* Dashboard Todo Content */
+
+.dashboard-todo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    padding: 120px 250px 100px 250px;
+    margin: 0;
+    font-weight: 1500;
+    color: black;
+    border-bottom: none;
+    position: relative; /* Add this */
+}
+
+.dashboard-todo-container::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80%; /* Adjust for desired length */
+    height: 1px; /* Thickness of the line */
+    background: black; /* Or any color you want */
+    border-radius: 1px;
+}
+
+.dashboard-todo-container .dashboard-todo-aside {
+    align-self: baseline;
+    font-weight: 800;
+    width: 40%;
+
+    padding: 60px 20px 70px 70px;
+    /*margin-right: 50px;*/
+    border: #535bf2;
+}
+
+.dashboard-container .dashboard-to-logo{
+    align-self: center;
+    border: #535bf2;
+}
+
+
+/* Dashboard Chat Content */
+
+.dashboard-chat-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    padding: 120px 250px 100px 250px;
+    margin: 0;
+    font-weight: 1500;
+    color: black;
+    border-bottom: none;
+    position: relative; /* Add this */
+}
+
+
+.dashboard-chat-container .dashboard-chat-aside {
+    align-self: baseline;
+    font-weight: 800;
+    width: 40%;
+
+    /*padding: 60px 80px 70px 70px;*/
+    margin-right: 50px;
+    border: #535bf2;
+}
+
+.dashboard-chat-container .dashboard-chat-logo{
+    align-self: center;
+    border: #535bf2;
+}
+
+
+
