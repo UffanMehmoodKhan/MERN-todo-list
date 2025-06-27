@@ -12,6 +12,8 @@ export default function ChatRoom() {
     const [friendName, setFriendName] = useState("");
     const chatForm = useRef(null);
     const socketRef = useRef(null);
+    const chatScreenRef = useRef(null);
+
     const username = localStorage.getItem("username");
 
     // Initialize socket connection
@@ -109,6 +111,12 @@ export default function ChatRoom() {
             chatForm.current.style.display = "block";
         }
     }
+
+    useEffect(() => {
+        if (chatScreenRef.current) {
+            chatScreenRef.current.scrollTop = chatScreenRef.current.scrollHeight;
+        }
+    }, [messages]);
 
     async function handleCreateChat(e) {
         e.preventDefault();
@@ -214,6 +222,7 @@ export default function ChatRoom() {
                 {/* Chat Messages */}
                 <div
                     className="chat-screen"
+                    ref={chatScreenRef}
                     style={{
                         display: "flex",
                         flexDirection: "column",

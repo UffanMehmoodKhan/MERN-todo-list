@@ -38,4 +38,6 @@
     overflow-y: auto;
     background: #f5f5f5;
     padding: 10px;
+    overflow-anchor: none;
+    scroll-margin-inline-end: 10px;
 }
